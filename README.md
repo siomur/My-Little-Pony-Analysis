@@ -5,12 +5,18 @@
 ### Dataset
 The dataset for this analysis can be found [here](https://www.kaggle.com/liury123/my-little-pony-transcript).
 
-### Instructions
+(**litte_pony.raw.csv** is the dataset)
+
+### TODO
 Calculate the percentage of lines spoken by the top 5 most frequent speakers (ponies) over the entire dataset, including all characters.
+
+### RESULTS
+Explore.md has the instructions to end up with the calculations using CLI tools. 
+line_percentages.csv has the result.
 
 ## Part 2: Word Counts and TF-IDF Analysis for Each Pony
 
-### Instructions
+### TODO
 Create a Python script, `compile_word_counts.py`, that computes word counts for each pony from all episodes of My Little Pony. The script should have the following functionality:
 
 - Run as follows:
@@ -31,6 +37,12 @@ Create another script, `compute_pony_lang.py`, which runs as follows:
   python compute_pony_lang.py -c <pony_counts.json> -n <num_words>
   ```
   The script should output, in JSON format to stdout, the top `<num_words>` words with the highest TF-IDF score for each pony.
+  
+### RESULTS
+Scripts are the same names as given in the TODO part.
+
+- pony_counts.json contains the word count for each pony.
+- distinctive_pony_words.json contains the top 5 words with the highest tf-idf score for each pony.
 
 ## Part 3: Network Modeling of My Little Pony Conversations
 
@@ -42,7 +54,7 @@ Create a Python script, `build_interaction_network.py`, that works as follows:
 python build_interaction_network.py -i /path/to/<script_input.csv> -o /path/to/<interaction_network.json>
 ```
 
-#### Instructions
+#### TODO
 - Model the interaction network as who speaks to whom.
 - Define an edge between two characters whenever character Y has a line immediately after character X in an episode.
 - The weight of the edge is the number of times they speak to each other.
@@ -59,9 +71,16 @@ Create a Python script, `compute_network_stats.py`, that runs as follows:
 python compute_network_stats.py -i /path/to/<interaction_network.json> -o /path/to/<stats.json>
 ```
 
-#### Instructions
+#### TODO
 Using the networkx library, compute the following statistics:
 - Top three most connected characters by degree centrality.
 - Top three most connected characters by weighted degree centrality.
 - Top three most connected characters by closeness centrality.
 - Top three most central characters by betweenness centrality.
+
+### RESULTS
+Scripts and results are the same names as given in the TODO parts:
+- build_interaction_network.py
+- interaction_network.json
+- compute_network_stats.py
+- stats.json
